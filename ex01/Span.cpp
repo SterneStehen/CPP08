@@ -6,7 +6,7 @@
 /*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:21:52 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/07 14:03:28 by smoreron         ###   ########.fr       */
+/*   Updated: 2025/02/11 05:37:46 by smoreron         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,23 +15,23 @@
 
 Span::Span(int n)
 {
-    _N = n;
+	_N = n;
 }
 
 Span::Span(const Span &sp)
 {
-    _N = sp._N;
-    _store = sp._store;
+	_N = sp._N;
+	_store = sp._store;
 }
 
 Span &Span::operator=(const Span &sp)
 {
-    if (this != &sp)
-    {
-        _N = sp._N;
-        _store = sp._store;
-    }
-    return *this;
+	if (this != &sp)
+	{
+		_N = sp._N;
+		_store = sp._store;
+	}
+	return *this;
 }
 
 Span::~Span()
@@ -41,12 +41,12 @@ Span::~Span()
 
 void Span::addNumber(int i)
 {
-    if (_store.size() < _N)
-        _store.push_back(i);
-    else
-    {
-        throw std::logic_error("tore is full");  
-    }
+	if (_store.size() < _N)
+		_store.push_back(i);
+	else
+	{
+		throw std::logic_error("store is full");  
+	}
 }
 
 int Span::longestSpan() const
