@@ -6,32 +6,16 @@
 /*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:21:52 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/07 13:56:56 by smoreron         ###   ########.fr       */
+/*   Updated: 2025/02/07 14:03:28 by smoreron         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Span.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 14:00:00 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/07 14:00:00 by smoreron         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "Span.hpp"
 
-/*************************************
- *           CONSTRUCTORS
- *************************************/
 Span::Span(int n)
 {
     _N = n;
-    // Optional: reserve to avoid reallocation
-    // _store.reserve(n);
 }
 
 Span::Span(const Span &sp)
@@ -54,9 +38,6 @@ Span::~Span()
 {
 }
 
-/*************************************
- *         MEMBER FUNCTIONS
- *************************************/
 
 void Span::addNumber(int i)
 {
@@ -64,9 +45,7 @@ void Span::addNumber(int i)
         _store.push_back(i);
     else
     {
-        std::cout << "store is full" << std::endl;
-        // If you want to throw an exception instead of printing:
-        // throw(std::out_of_range("store is full"));
+        throw std::logic_error("tore is full");  
     }
 }
 
@@ -83,10 +62,8 @@ int Span::longestSpan() const
 int Span::shortestSpan()
 {
     if (_store.size() < 2)
-        throw std::logic_error("Not enough elements to calculate a span.");
-
-    // Naive approach: check every pair
-    int res = 2147483647; // A large number (INT_MAX), or pick your sentinel
+        throw std::logic_error("Not enough elements to calculate a span.");  
+    int res = 2147483647; 
     for (size_t i = 0; i < _store.size(); i++)
     {
         for (size_t j = i + 1; j < _store.size(); j++)
@@ -102,5 +79,5 @@ int Span::shortestSpan()
 int Span::getStore(int i)
 {
     return _store.at(i); 
-    // .at() will do bounds checking; or if you prefer no checks, use _store[i].
+    
 }
