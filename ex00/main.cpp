@@ -6,7 +6,7 @@
 /*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:06:49 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/07 14:12:54 by smoreron         ###   ########.fr       */
+/*   Updated: 2025/02/12 01:40:05 by smoreron         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -24,7 +24,7 @@ int main()
     for (int i = 0; i < 20; i++)
         v.push_back(i);
 
-    int searchVal1 = 16;
+    int searchVal1 = 22;
     try
     {
         std::vector<int>::iterator it = easyfind(v, searchVal1);
@@ -43,7 +43,7 @@ int main()
     for (int i = 0; i < 20; i++)
         myList.push_back(i);
 
-    int searchVal2 = 19;
+    int searchVal2 = 10;
     try
     {
         std::list<int>::iterator it = easyfind(myList, searchVal2);

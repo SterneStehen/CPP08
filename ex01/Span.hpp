@@ -6,7 +6,7 @@
 /*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:10:13 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/07 14:00:29 by smoreron         ###   ########.fr       */
+/*   Updated: 2025/02/12 02:00:28 by smoreron         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -28,7 +28,8 @@ private:
 
 public:
     
-    Span(int n);
+    Span(void);
+	Span(unsigned int n);
     Span(const Span &sp);
     Span &operator=(const Span &sp);
     ~Span();

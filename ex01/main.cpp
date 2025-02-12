@@ -6,10 +6,9 @@
 /*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:21:41 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/07 14:06:01 by smoreron         ###   ########.fr       */
+/*   Updated: 2025/02/12 01:51:41 by smoreron         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
-
 
 #include "Span.hpp"
 #include <iostream>
@@ -18,12 +17,12 @@
 
 int main()
 {
-    try
+	try
     {
-        
-        Span sp(5);
-        sp.addNumber(6);
-        sp.addNumber(3);
+
+		Span sp(5);
+		sp.addNumber(6);
+		sp.addNumber(3);
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
@@ -32,7 +31,7 @@ int main()
         std::cout << "Longest Span:  " << sp.longestSpan() << std::endl;
 
         
-        int size = 10;
+        int size = 100;
         std::vector<int> arr;
         arr.reserve(size);
         for (int i = 0; i < size; i++)
@@ -40,10 +39,10 @@ int main()
             arr.push_back(i);
         }
 
-        Span sp_multi(size + size);
+        Span sp_multi(size + 1);
         sp_multi.addNumbers(arr.begin(), arr.end());
 
-        std::cout << "\nsp_multi contents after addNumbers:" << std::endl;
+		std::cout << "\nsp_multi contents after addNumbers:" << std::endl;
         for (int i = 0; i < size; i++)
         {
             std::cout << sp_multi.getStore(i) << " ";

@@ -6,14 +6,16 @@
 /*   By: smoreron <smoreron@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:21:52 by smoreron          #+#    #+#             */
-/*   Updated: 2025/02/11 05:37:46 by smoreron         ###   ########.fr       */
+/*   Updated: 2025/02/12 02:43:32 by smoreron         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 
 #include "Span.hpp"
 
-Span::Span(int n)
+
+Span::Span(void): _N(0){}
+Span::Span(unsigned int n)
 {
 	_N = n;
 }
@@ -58,7 +60,7 @@ int Span::longestSpan() const
     int max_value = *std::max_element(_store.begin(), _store.end());
     return max_value - min_value;
 }
-
+ 
 int Span::shortestSpan()
 {
     if (_store.size() < 2)
